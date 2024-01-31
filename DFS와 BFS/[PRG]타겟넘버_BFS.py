@@ -14,6 +14,8 @@ def solution(numbers, target):
         #print(row)
     return row.count(target)
 
+print(solution([1, 1, 1, 1, 1], 3))
+print(solution([4, 1, 2, 1], 4))
 
 """
 print(row)

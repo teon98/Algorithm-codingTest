@@ -1,3 +1,6 @@
+'''
+링크: https://www.acmicpc.net/problem/2688
+'''
 import sys
 input = sys.stdin.readline
 

@@ -50,11 +50,6 @@ def bfs(graph, visited, start_list, M, N):
             # 그래프 범위를 벗어나면 무시한다
             if nx < 0 or ny < 0 or nx >= N or ny >= M:
                 continue
-            
-            # 토마토가 없을 경우 -> 방문 O, 무시
-            if graph[nx][ny] == -1:
-                visited[nx][ny] = True
-                continue
 
             # 안 익은 토마토를 발견하면 queue에 넣기, 방문O
             if graph[nx][ny] == 0 and visited[nx][ny] == False:
@@ -89,10 +84,11 @@ for i in range(N):
     for j in range(M):
         if graph[i][j] == 1 and visited[i][j] == False:
             start_tomato.append((i,j,0))
+        elif graph[i][j] == -1:
+            visited[i][j] = True
 
 result = bfs(graph, visited, start_tomato, M, N)
 is_all_True = True # 전체 다 방문했는지 확인하기
-print(visited)
 
 for row in visited:
     if False in row:

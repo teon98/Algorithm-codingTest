@@ -50,6 +50,7 @@ for i in range(N):
     for j in range(N):
         if graph[i][j] == 1:
             start = (i,j)
+            print(graph)
             result.append(bfs(graph, start, N))
 
 result.sort()
